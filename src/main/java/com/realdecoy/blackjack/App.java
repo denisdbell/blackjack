@@ -1,4 +1,4 @@
-package my.project;
+package com.realdecoy.blackjack;
 
 /**
  * Hello world!
