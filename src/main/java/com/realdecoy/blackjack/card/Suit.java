@@ -1,5 +1,5 @@
 /**
-* <h1>Card Enum</h1>
+* <h1>Suit Enum</h1>
 * Contains the suits for the cards
 * <p>
 * 

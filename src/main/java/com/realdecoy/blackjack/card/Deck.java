@@ -18,19 +18,17 @@ public class Deck
 {
   private ArrayList deck;
  
-  public Deck ()
-  {
+  public Deck (){
    
-  
     Iterator cardIterator = deck.iterator();
     while (cardIterator.hasNext())
     {
-      Card aCard = cardIterator.next();
+      Card aCard = (Card) cardIterator.next();
       System.out.println(aCard.getCardValue() + " of " + aCard.getSuit());
     }
   }
 
-  public initialize(){
+  public void initialize(){
     
     this.deck = new ArrayList();
     
@@ -44,7 +42,7 @@ public class Deck
     }
   }
 
-  public shuffleDeck(){
-        Collections.shuffle(deck);
+  public void shuffleDeck(){
+        Collections.shuffle(this.deck);
   }
 }

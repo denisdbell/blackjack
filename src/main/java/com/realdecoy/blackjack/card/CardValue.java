@@ -9,7 +9,7 @@
 
 package com.realdecoy.blackjack.card;
 
-public enum Card {
+public enum CardValue {
     
     TWO(2),
     THREE(3),
@@ -27,8 +27,7 @@ public enum Card {
  
     private int cardValue;
     
-    private CardValue (int value)
-    {
+    private CardValue (int value){
         this.cardValue = value;
     }
     
