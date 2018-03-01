@@ -40,7 +40,7 @@ public class Deck
     }
   }
 
-  public void shuffleDeck(){
+  public void shuffle(){
         Collections.shuffle(this.deck);
   }
 
