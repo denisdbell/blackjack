@@ -16,7 +16,7 @@ import java.util.Iterator;
  
 public class Deck
 {
-  private ArrayList deck;
+  private ArrayList deck = new ArrayList();
  
   public Deck (){
    
@@ -29,9 +29,7 @@ public class Deck
   }
 
   public void initialize(){
-    
-    this.deck = new ArrayList();
-    
+        
     for (int i=0; i<13; i++){
         CardValue value = CardValue.values()[i];
 
@@ -44,5 +42,9 @@ public class Deck
 
   public void shuffleDeck(){
         Collections.shuffle(this.deck);
+  }
+
+  public ArrayList getDeck(){
+      return this.deck;
   }
 }
