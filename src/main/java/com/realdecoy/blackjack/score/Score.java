@@ -17,15 +17,21 @@ public class Score {
 
     public static Integer generateScoreFromCards(ArrayList<Card> cards){
         
+        Integer score = 0;
+
+        if(cards.size() == 0){
+            return score;
+        }
+
         Iterator cardIterator = cards.iterator();
         
         while (cardIterator.hasNext()){
 
             Card aCard = (Card) cardIterator.next();
-            System.out.println(aCard.getCardValue() + " of " + aCard.getSuit());
+            score += aCard.getCardValue().getCardValue();
         }
 
-        return 0;
+        return score;
     }
 
 }
