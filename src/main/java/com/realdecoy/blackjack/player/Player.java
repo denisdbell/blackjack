@@ -9,14 +9,16 @@
 package com.realdecoy.blackjack.player;
 
 import com.realdecoy.blackjack.card.Card;
+import com.realdecoy.blackjack.score.Score;
+
 import java.util.ArrayList;
 
 
 public abstract class Player{
 
-    String name;
-    Integer score;
-    ArrayList<Card> cards;
+    private String name;
+    private Integer score;
+    private ArrayList<Card> cards = new ArrayList<Card>();
 
     public String getName(){
         return this.name;
@@ -26,11 +28,9 @@ public abstract class Player{
         this.name = name;
     }
 
-      public Integer getScore(){
+    public Integer getScore(){
+       
+        this.score = Score.generateScoreFromCards(this.cards);
         return this.score;
-    }
-
-    public void setScore(String name){
-        this.name = name;
     }
 }
