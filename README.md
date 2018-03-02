@@ -12,7 +12,7 @@ This is a java based console application which implements the black jack game.
 The instructions below describes the various methods which can be used
 to execute the game:
 
-### Run using the docker 
+### Run using Docker 
 ![docker icon](https://microsoftcloudexplorer.gallerycdn.vsassets.io/extensions/microsoftcloudexplorer/visualstudiotoolsfordocker-preview/0.41.0/1482142258056/Microsoft.VisualStudio.Services.Icons.Default)
 
 
@@ -26,7 +26,7 @@ You should see the following output displayed in your terminal:
 ![alt text](https://raw.githubusercontent.com/denisdbell/blackjack/master/blackjack.png "Black Jack Terminal")
 
 
-### Run using maven
+### Run using Maven
  ![maven icon](http://roufid.com/wp-content/uploads/2016/05/eyecatch-maven.png)
 
 The application uses the maven as it's build and dependency management tool. To run the application using maven perform the steps below:
@@ -46,8 +46,15 @@ The application uses the maven as it's build and dependency management tool. To 
 **4) Run the jar:**
 
     java -jar target/blackjack*.jar
+    
+### Execute unit tests 
 
-Thanks for reading! I hope you enjoy playing the game!
+Type the following command to execute the unit tests:
+
+    mvn test
+
+
+## Thanks for reading! I hope you enjoy playing the game!
 
 
 
