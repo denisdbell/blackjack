@@ -29,24 +29,34 @@ public class BlackJackTest{
     }
 
     @Test
-    public void test_getCurrentPlayer_should_choose_Dealer_player_when_totalPlays_is_odd() {
+    public void test_getPlayer_should_choose_Dealer_player_when_totalPlays_is_odd() {
 
         Integer oddTotalPlays = 3;
 
-        Player player = blackJack.getCurrentPlayer(oddTotalPlays);
+        Player player = blackJack.getPlayer(oddTotalPlays);
 
         assertTrue(player instanceof Dealer);
 
     }   
 
     @Test
-    public void test_getCurrentPlayer_should_choose_BlackJackPlayer_player_when_totalPlays_is_even() {
+    public void test_getPlayer_should_choose_BlackJackPlayer_player_when_totalPlays_is_even() {
 
         Integer evenTotalPlays = 2;
 
-        Player player = blackJack.getCurrentPlayer(evenTotalPlays);
+        Player player = blackJack.getPlayer(evenTotalPlays);
 
         assertTrue(player instanceof BlackJackPlayer);
         
     }   
+
+
+    @Test
+    public void test_Play() {
+
+        while(blackJack.play()){
+                
+        }
+    }
+
 }
