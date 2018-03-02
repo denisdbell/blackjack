@@ -7,7 +7,7 @@
 * @version 1.0
 */
 
-package com.realdecoy.blackjack.card;
+package com.realdecoy.blackjack.player;
 
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.times;
@@ -17,8 +17,10 @@ import java.util.ArrayList;
 import org.junit.*;
 import com.realdecoy.blackjack.card.Card;
 import com.realdecoy.blackjack.player.Player;
-import com.realdecoy.blackjack.card.CardValue.*;
+import com.realdecoy.blackjack.card.CardValue;
 import com.realdecoy.blackjack.card.Suit;
+import com.realdecoy.blackjack.card.Deck;
+
 
 public class PlayerTest {
 
