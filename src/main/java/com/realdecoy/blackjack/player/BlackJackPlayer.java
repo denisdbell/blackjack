@@ -10,4 +10,8 @@ package com.realdecoy.blackjack.player;
 
 public class BlackJackPlayer extends Player{
     
+    public BlackJackPlayer(String name){
+        super(name);
+    }
+       
 }
