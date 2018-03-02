@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
-  <groupId>my.project</groupId>
-  <artifactId>maven-java-seed</artifactId>
+  <groupId>com.realdecoy.blackjack</groupId>
+  <artifactId>blackjack</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   
   <name>maven-java-seed</name>
   <description>Maven Java Seed Project</description>
@@ -15,7 +15,9 @@
 	<maven.compiler.source>${java.version}</maven.compiler.source>
 	<maven.compiler.target>${java.version}</maven.compiler.target>
 	<junit.version>4.12</junit.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <docker.image.prefix>denisdbell/blackjack</docker.image.prefix>
+
   </properties>
   
   <dependencies>
@@ -45,6 +47,22 @@
             <mainClass>com.realdecoy.blackjack.App</mainClass>
           </manifest>
         </archive>
+      </configuration>
+    </plugin>
+    <plugin>
+      <groupId>com.spotify</groupId>
+      <artifactId>docker-maven-plugin</artifactId>
+      <version>0.4.11</version>
+      <configuration>
+          <imageName>${docker.image.prefix}:${project.version}</imageName>
+          <dockerDirectory>src/main/docker</dockerDirectory>
+          <resources>
+              <resource>
+                  <targetPath>/</targetPath>
+                  <directory>${project.build.directory}</directory>
+                  <include>${project.build.finalName}.jar</include>
+              </resource>
+          </resources>
       </configuration>
     </plugin>
   </plugins>
