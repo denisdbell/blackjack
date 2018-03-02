@@ -19,7 +19,10 @@ in your terminal:
 
     docker ​run​ -it denisdbell/blackjack:1.0
 
-You should see the following output displayed to stdout:
+You should see the following output displayed in your terminal:
+
+![alt text](https://raw.githubusercontent.com/denisdbell/blackjack/master/blackjack.png "Black Jack Terminal")
+
 
 ### Run using maven
 
