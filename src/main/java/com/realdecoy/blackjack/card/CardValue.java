@@ -23,7 +23,7 @@ public enum CardValue {
     JACK(10),
     QUEEN(10),
     KING(10),
-    ACE(1);
+    ACE(11);
  
     private int cardValue;
     
