@@ -37,7 +37,7 @@ public class PlayerTest {
 
         deck = new Deck();  
 
-        player = new Player();
+        player = new Player("Default Player");
     }
 
     @Test
