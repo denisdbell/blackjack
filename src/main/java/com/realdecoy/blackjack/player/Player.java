@@ -20,6 +20,10 @@ public class Player{
     private Integer score;
     private ArrayList<Card> cards = new ArrayList<Card>();
 
+    public Player(String name){
+        this.name = name;
+    }
+
     public String getName(){
         return this.name;
     }
@@ -38,6 +42,25 @@ public class Player{
         return cards;
     }
 
+    public Boolean busted(){
+
+        if( getScore() > 21 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+     public Boolean hasScoreOf21(){
+
+        if( getScore() == 21 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
     public ArrayList<Card>  hit(ArrayList<Card> deck){
 
         if(deck.size() == 0){
@@ -51,5 +74,11 @@ public class Player{
         }
         
         return deck;
+    }
+
+    public Card getLastCard(){
+        
+        return cards.get( cards.size() - 1 );
+               
     }
 }
