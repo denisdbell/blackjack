@@ -17,6 +17,8 @@ import com.realdecoy.blackjack.card.Card;
 import java.util.ArrayList;
 import java.util.Scanner;
 import com.realdecoy.blackjack.card.CardValue;
+import com.realdecoy.blackjack.util.ConsoleColor;
+
 
 public class BlackJack {
 
@@ -40,45 +42,22 @@ public class BlackJack {
         deck.shuffle();
     }
 
-    /*public Boolean play(){
-
-
-        Player currentPlayer = getPlayer(this.totalPlays);
-
-        System.out.println("Its now " + currentPlayer.getName() + " turn");
-
-        currentPlayer.hit(deck.getDeck());
-
-        System.out.println(currentPlayer.getName() + " took " + currentPlayer.getLastCard() + " from the deck ");
-
-        System.out.println(currentPlayer.getName() + " Score is:  " + currentPlayer.getScore() );
-
-        this.totalPlays++;
-
-        Player winner = this.checkForWinner();
-
-        if( winner != null ){
-            System.out.println("Winner is " + winner.getName() + " with a score of " +  winner.getScore());
-            return false;
-        }
-
-        return true;
-    }*/
-
-     public Boolean play(){
+    public Boolean play(){
 
         String option = "";
         String aceValue = "";
 
-
+        
         Player currentPlayer = getPlayer(this.totalPlays);
 
-        System.out.println("Its now " + currentPlayer.getName() + "'s' turn");
+        String color = this.totalPlays % 2 == 1 ? ConsoleColor.ANSI_CYAN : ConsoleColor.ANSI_PURPLE;
+
+        System.out.println( color +  "Its now " + currentPlayer.getName() + "'s' turn" + ConsoleColor.ANSI_RESET);
 
         while( !(option.equalsIgnoreCase("s") || option.equalsIgnoreCase("h")) ){
             
             if(currentPlayer instanceof BlackJackPlayer){
-                System.out.println("Enter h to HIT Or s to STAND");
+                System.out.println(color +  "Enter h to HIT Or s to STAND" + ConsoleColor.ANSI_RESET);
                 option = scan.nextLine();
             }else if(currentPlayer instanceof Dealer){
                 option = "h";
@@ -94,9 +73,9 @@ public class BlackJack {
                Card lastCard =  currentPlayer.getLastCard();
 
                 if(lastCard.getCardValue() == CardValue.ACE ){
-                    
-                    while( !(option.equalsIgnoreCase("1") || option.equalsIgnoreCase("11")) ){
-                        System.out.println("You chose " + lastCard + " Enter a value of 1 or 11 for the card");
+    
+                    while( !(aceValue.equals("1") || aceValue.equals("11")) ){
+                        System.out.println(color + "You chose " + lastCard + " Enter a value of 1 or 11 for the card"  + ConsoleColor.ANSI_RESET);
                         aceValue = scan.nextLine();   
                     }
 
@@ -108,9 +87,12 @@ public class BlackJack {
                 }
             }
 
-            System.out.println(currentPlayer.getName() + " took " + currentPlayer.getLastCard() + " from the deck ");
+            System.out.println(color + currentPlayer.getName() + " took " + currentPlayer.getLastCard() + " from the deck " + ConsoleColor.ANSI_RESET);
 
-            System.out.println(currentPlayer.getName() + " Score is:  " + currentPlayer.getScore() );
+            System.out.println(color + currentPlayer.getName() + " Score is:  " + currentPlayer.getScore() + ConsoleColor.ANSI_RESET );
+
+            System.out.println(color + "---------------------------------------------------------------------" + ConsoleColor.ANSI_RESET );
+       
         }
 
         this.totalPlays++;
@@ -118,8 +100,10 @@ public class BlackJack {
         Player winner = this.checkForWinner();
 
         if( winner != null ){
-                System.out.println("Winner is " + winner.getName() + " with a score of " +  winner.getScore());
-                return false;
+               System.out.println( ConsoleColor.ANSI_GREEN + "*************************************************************************" + ConsoleColor.ANSI_RESET);
+               System.out.println( ConsoleColor.ANSI_GREEN + "Winner is " + winner.getName() + " with a score of " +  winner.getScore() + ConsoleColor.ANSI_RESET);
+               System.out.println( ConsoleColor.ANSI_GREEN + "*************************************************************************" + ConsoleColor.ANSI_RESET);
+               return false;
         }
 
         return true;
