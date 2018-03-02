@@ -14,7 +14,7 @@ import com.realdecoy.blackjack.score.Score;
 import java.util.ArrayList;
 
 
-public abstract class Player{
+public class Player{
 
     private String name;
     private Integer score;
@@ -32,5 +32,24 @@ public abstract class Player{
        
         this.score = Score.generateScoreFromCards(this.cards);
         return this.score;
+    }
+
+    public ArrayList<Card> getCards(){
+        return cards;
+    }
+
+    public ArrayList<Card>  hit(ArrayList<Card> deck){
+
+        if(deck.size() == 0){
+            return deck;
+        }else{
+            //Take first card from the deck 
+            //Add it to the players cards
+            //remove card from the deck
+            cards.add(deck.get(0));
+            deck.remove(0);
+        }
+        
+        return deck;
     }
 }
