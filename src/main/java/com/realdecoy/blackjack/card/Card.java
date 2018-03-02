@@ -39,4 +39,8 @@ public class Card
   {
     this.cardValue = cardValue;
   }
+
+  public String toString(){
+    return getCardValue() + " Of " + getSuit();
+  }
 }
