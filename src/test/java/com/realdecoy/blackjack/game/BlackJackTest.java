@@ -48,15 +48,5 @@ public class BlackJackTest{
 
         assertTrue(player instanceof BlackJackPlayer);
         
-    }   
-
-
-    @Test
-    public void test_Play() {
-
-        while(blackJack.play()){
-                
-        }
     }
-
 }
