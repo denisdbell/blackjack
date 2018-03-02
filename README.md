@@ -30,19 +30,19 @@ The application uses the maven as it's build and dependency management tool. To 
 
 **1) Clone the repository:**
 
-git clone https://github.com/denisdbell/blackjack.git
+    git clone https://github.com/denisdbell/blackjack.git
 
 **2) Navigate to the blackjack folder:**
 
-cd blackjack
+    cd blackjack
 
 **3) Create the jar:**
 
-mvn clean package
+    mvn clean package
 
 **4) Run the jar:**
 
-java -jar target/blackjack*.jar
+    java -jar target/blackjack*.jar
 
 Thanks for reading, I hope you enjoy playing the game!
 
